@@ -1,0 +1,14 @@
+{
+  "name": "nuweiba-promedia",
+  "version": "1.0.0",
+  "description": "Nuweiba Camps × ProMedia Strategic Proposal Presentation",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vite": "^8.3.5"
+  }
+}
