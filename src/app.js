@@ -410,11 +410,11 @@ function renderAllSections() {
           <div>${s.s06.disclaimer}</div>
         </div>
 
-        <div style="background:#FFFFFF; border-radius:var(--radius-lg); padding:28px; border:1px solid var(--color-border); margin-bottom:40px;">
-          <h3 style="font-size:1.2rem; font-weight:800; color:var(--color-navy); margin-bottom:16px;">${s.s06.deliverablesTitle}</h3>
-          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:14px;">
+        <div class="creator-deliverables-box">
+          <h3 class="creator-deliverables-title">${s.s06.deliverablesTitle}</h3>
+          <div class="creator-deliverables-grid">
             ${s.s06.deliverables.map(del => `
-              <div style="display:flex; align-items:flex-start; gap:8px; font-size:0.92rem; color:var(--color-slate);">
+              <div class="creator-deliverable-item">
                 <span style="color:var(--color-primary); font-weight:800;">✓</span>
                 <span>${del}</span>
               </div>
@@ -443,7 +443,7 @@ function renderAllSections() {
                     </div>
                   </div>
 
-                  <div class="creator-card-body" style="grid-template-columns: 240px 1fr;">
+                  <div class="creator-card-body creator-leader-card-body">
                     <div class="creator-visual-col">
                       <img src="${creator.avatar}" alt="${creator.name}" class="creator-main-image lightbox-trigger" style="aspect-ratio: 1; object-fit: cover; border-radius: var(--radius-lg); border: 2px solid var(--color-gold);" />
                     </div>
@@ -620,19 +620,19 @@ function renderAllSections() {
 
                   ${creator.evidenceScreenshots && creator.evidenceScreenshots.length > 0 ? `
                     <!-- Social Media Evidence Screenshots Gallery -->
-                    <div style="margin-top: 18px; padding: 16px; background: rgba(15, 23, 42, 0.6); border-radius: var(--radius-md); border: 1px solid rgba(255, 255, 255, 0.1);">
-                      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
-                        <span style="font-size: 0.82rem; font-weight: 700; color: #FFFFFF; display: flex; align-items: center; gap: 6px;">
+                    <div class="creator-evidence-box">
+                      <div class="creator-evidence-header">
+                        <span class="creator-evidence-title">
                           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-turquoise)" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
                           ${currentLang === 'ar' ? 'إثباتات السوشيال ميديا وتوثيق الأرقام (11 - إثباتات السوشيال ميديا)' : 'Social Media Verification Evidence Screenshots'}
                         </span>
                         <span style="font-size: 0.72rem; color: #94A3B8;">${creator.evidenceScreenshots.length} ${currentLang === 'ar' ? 'لقطات موثقة' : 'Screenshots'}</span>
                       </div>
-                      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 10px;">
+                      <div class="creator-evidence-grid">
                         ${creator.evidenceScreenshots.map((shot, idx) => `
-                          <div style="position: relative; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.15); background: #000; aspect-ratio: 9/16; max-height: 180px;">
-                            <img src="${shot}" alt="Social Media Evidence ${idx + 1}" class="lightbox-trigger" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: zoom-in;" />
-                            <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 4px; background: rgba(0,0,0,0.7); font-size: 0.65rem; color: #FFF; text-align: center;">
+                          <div class="creator-evidence-card">
+                            <img src="${shot}" alt="Social Media Evidence ${idx + 1}" class="lightbox-trigger" />
+                            <div class="creator-evidence-caption">
                               ${currentLang === 'ar' ? `إثبات ${idx + 1}` : `Proof ${idx + 1}`}
                             </div>
                           </div>
