@@ -9,6 +9,12 @@ export const proposalData = {
       officialWebsite: "https://nuweibacamps.com/",
       presentationType: "عرض استراتيجي تفاعلي متكامل"
     },
+    intro: {
+      presentedBy: "تقديم ProMedia",
+      proposalSubtitle: "استراتيجية متكاملة للمحتوى والتسويق الرقمي لمخيمات نويبع",
+      exploreBtn: "استكشاف العرض الاستراتيجي",
+      scrollHint: "التمرير لبدء العرض"
+    },
     nav: {
       brand: "نويبع كامبس × بروميديا",
       s01: "الرؤية",
@@ -607,6 +613,12 @@ export const proposalData = {
       title: "Brand Development & Digital Growth Strategy 2026",
       officialWebsite: "https://nuweibacamps.com/",
       presentationType: "Interactive Strategic Proposal"
+    },
+    intro: {
+      presentedBy: "Presented by ProMedia",
+      proposalSubtitle: "A Strategic Digital & Content Proposal for Nuweiba Camps",
+      exploreBtn: "Explore Strategic Proposal",
+      scrollHint: "Scroll to begin proposal"
     },
     nav: {
       brand: "Nuweiba Camps × ProMedia",

@@ -107,6 +107,53 @@ function renderAllSections() {
   const officialSiteBtn = document.getElementById('nav-official-btn');
   if (officialSiteBtn) officialSiteBtn.textContent = d.nav.visitSite;
 
+  // AGENCY INTRO: PREMIER CINEMATIC OPENING
+  const agencyIntroEl = document.getElementById('section-agency-intro');
+  if (agencyIntroEl && d.intro) {
+    agencyIntroEl.innerHTML = `
+      <div class="agency-intro-container">
+        <div class="agency-intro-glow"></div>
+        <div class="agency-intro-inner">
+          <div class="agency-badge-top">
+            <span class="agency-pulse-dot"></span>
+            <span>PROMEDIA PRESENTATION 2026</span>
+          </div>
+
+          <div class="agency-logo-showcase">
+            <img 
+              src="./assets/logos/promedia-logo.png" 
+              alt="ProMedia Official Logo" 
+              class="agency-logo-giant" 
+            />
+          </div>
+
+          <div class="agency-text-content">
+            <h1 class="agency-presented-by">${d.intro.presentedBy}</h1>
+            <p class="agency-proposal-subtitle">${d.intro.proposalSubtitle}</p>
+          </div>
+
+          <div class="agency-transition-actions">
+            <a href="#cover" class="agency-scroll-btn" id="agency-scroll-trigger">
+              <span>${d.intro.exploreBtn}</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <polyline points="19 12 12 19 5 12"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <div class="agency-client-association">
+            <span class="agency-client-label">${currentLang === 'ar' ? 'المشروع المقترح لـ:' : 'Strategic Client:'}</span>
+            <div class="agency-client-pill">
+              <img src="./assets/logos/nuweiba-logo.png" alt="Nuweiba Camps" style="height: 20px; width: auto; object-fit: contain;" />
+              <span>Nuweiba Camps — نويبع كامبس</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
   // S01: HERO & VISION
   const heroContainer = document.getElementById('section-cover');
   if (heroContainer) {
