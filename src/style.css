@@ -2277,7 +2277,7 @@ button {
 /* Kaab El Dayr Tight Logo Card (Zero Waste Space) */
 .kaab-logo-card {
   width: fit-content;
-  max-width: 220px;
+  max-width: 260px;
   margin: 0 auto 12px;
   background: #0B1120;
   border-radius: var(--radius-md);
@@ -2309,9 +2309,8 @@ button {
 .kaab-logo-img {
   display: block;
   width: 100%;
-  max-width: 180px;
+  max-width: 220px;
   height: auto;
-  max-height: 140px;
   object-fit: contain;
   margin: 0 auto;
   border-radius: 6px;

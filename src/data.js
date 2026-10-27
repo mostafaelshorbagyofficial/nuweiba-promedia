@@ -1223,8 +1223,7 @@ export const proposalData = {
       hasVideo: true,
       videoPath: "./assets/kaab/kaab_1.mp4",
       posterImage: "./assets/kaab/kaab_2.jpeg",
-      logo: "./assets/kaab/kaab_logo_cropped.jpg",
-      cartoonVisual: "./assets/kaab-cartoon/kaab_cartoon.jpeg",
+      logo: "./assets/kaab/kaab_official_logo.jpeg",
       evidenceScreenshots: [
         "./assets/social-proof/proof_1.jpeg",
         "./assets/social-proof/proof_2.jpeg",
