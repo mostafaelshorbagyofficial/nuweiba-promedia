@@ -519,12 +519,12 @@ function renderAllSections() {
               <div class="creator-card-body">
                 <div class="creator-visual-col">
                   ${creator.logo ? `
-                    <!-- Kaab El Dayr Official Logo -->
-                    <div style="background: #FFFFFF; border-radius: var(--radius-md); padding: 18px; border: 1px solid var(--color-border); margin-bottom: 14px; text-align: center; box-shadow: var(--shadow-sm);">
-                      <div style="font-size: 0.72rem; color: var(--color-muted); font-weight: 700; margin-bottom: 8px; text-transform: uppercase;">
-                        ${currentLang === 'ar' ? 'شعار كعب داير الرسمي' : 'Official Kaab El Dayr Logo'}
+                    <!-- Kaab El Dayr Official Logo Card (Tight Fit, No Waste Space) -->
+                    <div class="kaab-logo-card">
+                      <div class="kaab-logo-header">
+                        <span class="kaab-logo-tag">${currentLang === 'ar' ? 'شعار كعب داير الرسمي' : 'Official Kaab El Dayr Logo'}</span>
                       </div>
-                      <img src="${creator.logo}" alt="Kaab El Dayr Logo" class="lightbox-trigger" style="max-height: 120px; width: auto; object-fit: contain; margin: 0 auto; display: block;" />
+                      <img src="${creator.logo}" alt="Kaab El Dayr Logo" class="kaab-logo-img lightbox-trigger" />
                     </div>
                   ` : ''}
 

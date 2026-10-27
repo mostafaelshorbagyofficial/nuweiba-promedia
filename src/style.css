@@ -2274,6 +2274,50 @@ button {
   grid-template-columns: 240px 1fr;
 }
 
+/* Kaab El Dayr Tight Logo Card (Zero Waste Space) */
+.kaab-logo-card {
+  width: fit-content;
+  max-width: 220px;
+  margin: 0 auto 12px;
+  background: #0B1120;
+  border-radius: var(--radius-md);
+  padding: 8px 10px;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  transition: transform var(--transition-fast);
+}
+
+.kaab-logo-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-gold);
+}
+
+.kaab-logo-header {
+  margin-bottom: 6px;
+  line-height: 1;
+}
+
+.kaab-logo-tag {
+  font-size: 0.68rem;
+  color: var(--color-gold);
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.kaab-logo-img {
+  display: block;
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  max-height: 140px;
+  object-fit: contain;
+  margin: 0 auto;
+  border-radius: 6px;
+  cursor: zoom-in;
+}
+
 /* ========================================================
    RESPONSIVE MEDIA QUERIES (COMPREHENSIVE AUDIT & MOBILE SUPPORT)
 ======================================================== */
