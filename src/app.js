@@ -415,6 +415,19 @@ function renderAllSections() {
                     <img src="${creator.avatar}" alt="${creator.name}" class="creator-main-image lightbox-trigger" />
                   `}
 
+                  ${creator.cartoonVisual ? `
+                    <!-- Kaab El Dayr Official Cartoon Opening Visual -->
+                    <div style="margin-top: 14px; background: #0F172A; border-radius: var(--radius-md); overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);">
+                      <div style="padding: 8px 12px; background: rgba(255, 255, 255, 0.05); display: flex; align-items: center; justify-content: space-between;">
+                        <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-gold);">
+                          ${currentLang === 'ar' ? 'الرسم الكرتوني / الهوية البصرية (كعب داير)' : 'Official Cartoon Identity Artwork'}
+                        </span>
+                        <span style="font-size: 0.7rem; color: #94A3B8;">09 - كعب داير</span>
+                      </div>
+                      <img src="${creator.cartoonVisual}" alt="Kaab El Dayr Cartoon Visual" class="lightbox-trigger" style="width: 100%; max-height: 260px; object-fit: contain; background: #0b1120; display: block; cursor: zoom-in;" />
+                    </div>
+                  ` : ''}
+
                   <div class="creator-thumbs-grid">
                     ${creator.gallery.slice(0, 4).map(img => `
                       <img src="${img}" alt="Preview" class="creator-thumb-item lightbox-trigger" />
@@ -451,7 +464,7 @@ function renderAllSections() {
                           </p>
 
                           <!-- Mohamed Elhagan Official Clickable Links -->
-                          <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom: 14px;">
                             ${creator.leaderProfile.links.map(l => `
                               <a href="${l.url}" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:6px; padding:6px 14px; border-radius:var(--radius-full); background:rgba(255,255,255,0.12); color:#FFFFFF; font-size:0.78rem; font-weight:700; border:1px solid rgba(255,255,255,0.25); text-decoration:none;">
                                 <span>${l.label}</span>
@@ -459,6 +472,29 @@ function renderAllSections() {
                               </a>
                             `).join('')}
                           </div>
+
+                          <!-- Mohamed Elhagan Dedicated Social Media Stats -->
+                          ${creator.leaderProfile.socialStats ? `
+                            <div style="background: rgba(0, 0, 0, 0.25); border-radius: var(--radius-md); padding: 12px 14px; border: 1px solid rgba(255, 255, 255, 0.08);">
+                              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; text-align: center;">
+                                <div style="background: rgba(255, 255, 255, 0.05); padding: 8px 6px; border-radius: 8px;">
+                                  <div style="font-size: 1.15rem; font-weight: 800; color: #FFFFFF;">${creator.leaderProfile.socialStats.facebook}</div>
+                                  <div style="font-size: 0.72rem; color: #94A3B8; font-weight: 600; margin-top: 2px;">Facebook</div>
+                                </div>
+                                <div style="background: rgba(255, 255, 255, 0.05); padding: 8px 6px; border-radius: 8px;">
+                                  <div style="font-size: 1.15rem; font-weight: 800; color: var(--color-gold);">${creator.leaderProfile.socialStats.instagram}</div>
+                                  <div style="font-size: 0.72rem; color: #94A3B8; font-weight: 600; margin-top: 2px;">Instagram</div>
+                                </div>
+                                <div style="background: rgba(255, 255, 255, 0.05); padding: 8px 6px; border-radius: 8px;">
+                                  <div style="font-size: 1.15rem; font-weight: 800; color: var(--color-turquoise);">${creator.leaderProfile.socialStats.tiktok}</div>
+                                  <div style="font-size: 0.72rem; color: #94A3B8; font-weight: 600; margin-top: 2px;">TikTok</div>
+                                </div>
+                              </div>
+                              <div style="font-size: 0.68rem; color: #94A3B8; margin-top: 8px; text-align: center; font-style: italic;">
+                                ${currentLang === 'ar' ? creator.leaderProfile.socialStats.noteAr : creator.leaderProfile.socialStats.noteEn}
+                              </div>
+                            </div>
+                          ` : ''}
                         </div>
                       </div>
                     </div>
@@ -524,6 +560,29 @@ function renderAllSections() {
                     <div class="info-block-label">${d.influencers.creativeAngles}</div>
                     <p class="info-block-text">${currentLang === 'ar' ? creator.creativeAnglesAr : creator.creativeAnglesEn}</p>
                   </div>
+
+                  ${creator.evidenceScreenshots && creator.evidenceScreenshots.length > 0 ? `
+                    <!-- Social Media Evidence Screenshots Gallery -->
+                    <div style="margin-top: 18px; padding: 16px; background: rgba(15, 23, 42, 0.6); border-radius: var(--radius-md); border: 1px solid rgba(255, 255, 255, 0.1);">
+                      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+                        <span style="font-size: 0.82rem; font-weight: 700; color: #FFFFFF; display: flex; align-items: center; gap: 6px;">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-turquoise)" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                          ${currentLang === 'ar' ? 'إثباتات السوشيال ميديا وتوثيق المشاهدات (11 - إثباتات السوشيال ميديا)' : 'Social Media Verification Evidence Screenshots'}
+                        </span>
+                        <span style="font-size: 0.72rem; color: #94A3B8;">${creator.evidenceScreenshots.length} ${currentLang === 'ar' ? 'لقطات موثقة' : 'Screenshots'}</span>
+                      </div>
+                      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 10px;">
+                        ${creator.evidenceScreenshots.map((shot, idx) => `
+                          <div style="position: relative; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.15); background: #000; aspect-ratio: 9/16; max-height: 180px;">
+                            <img src="${shot}" alt="Social Media Evidence ${idx + 1}" class="lightbox-trigger" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: zoom-in;" />
+                            <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 4px; background: rgba(0,0,0,0.7); font-size: 0.65rem; color: #FFF; text-align: center;">
+                              ${currentLang === 'ar' ? `إثبات ${idx + 1}` : `Proof ${idx + 1}`}
+                            </div>
+                          </div>
+                        `).join('')}
+                      </div>
+                    </div>
+                  ` : ''}
 
                   ${creator.links ? `
                     <div class="creator-links-group">

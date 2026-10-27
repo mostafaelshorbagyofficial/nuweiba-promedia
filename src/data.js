@@ -1213,6 +1213,14 @@ export const proposalData = {
       hasVideo: true,
       videoPath: "./assets/kaab/kaab_1.mp4",
       posterImage: "./assets/kaab/kaab_2.jpeg",
+      cartoonVisual: "./assets/kaab-cartoon/kaab_cartoon.jpeg",
+      evidenceScreenshots: [
+        "./assets/social-proof/proof_1.jpeg",
+        "./assets/social-proof/proof_2.jpeg",
+        "./assets/social-proof/proof_3.jpeg",
+        "./assets/social-proof/proof_4.jpeg",
+        "./assets/social-proof/proof_5.jpeg"
+      ],
       gallery: [
         "./assets/kaab/kaab_2.jpeg",
         "./assets/kaab/kaab_3.jpeg",
@@ -1247,7 +1255,14 @@ export const proposalData = {
         links: [
           { label: "Instagram (@m.ellhagan)", url: "https://www.instagram.com/m.ellhagan/" },
           { label: "Facebook (MohamedElhaganPromedia)", url: "https://web.facebook.com/MohamedElhaganPromedia/" }
-        ]
+        ],
+        socialStats: {
+          facebook: "1M",
+          instagram: "600K",
+          tiktok: "300K",
+          noteAr: "أرقام معطاة ومقدمة من المشروع (غير مدققة بشكل مستقل)",
+          noteEn: "Supplied project figures (not independently verified)"
+        }
       },
       members: [
         {
