@@ -24,7 +24,6 @@ export const proposalData = {
       s05: "محركات النمو",
       s06: "كبار المؤثرين (الاستراتيجي)",
       s07: "المؤثرون المصغرون",
-      s_inf_net: "شبكة المؤثرين (Dream)",
       s_ugc_creators: "صُنّاع محتوى UGC",
       s_packages: "باقات الحملات",
       s08: "أفكار UGC الإبداعية",
@@ -629,7 +628,6 @@ export const proposalData = {
       s05: "Growth Model",
       s06: "Strategic Mega Creators",
       s07: "Mini Creators",
-      s_inf_net: "Influencer Network",
       s_ugc_creators: "UGC Creators",
       s_packages: "Campaign Packages",
       s08: "UGC Creative Concepts",
@@ -1212,19 +1210,20 @@ export const proposalData = {
     }
   },
 
-  // Detailed Mega Creator Data (Ordered exactly as requested: 1. ElZuzzat / Kaab El Dayr, 2. Ahmed Badawy, 3. Kiro, 4. Karim El Sayed, 5. Basant Nour El Din)
+  // Detailed Mega Creator Data (Ordered exactly as requested: 1. Kaab El Dayr, 2. ElZuzzat, 3. Ahmed Badawy, 4. Kiro, 5. Karim El Sayed, 6. Basant Nour El Din)
   megaCreators: [
     {
-      id: "elzuzzat",
+      id: "kaab-eldayr",
       rank: 1,
-      name: "ElZuzzat — الزوزات / كعب داير",
-      handle: "@elzuzzat",
-      roleAr: "فريق صناعة محتوى السفر والمغامرات (كعب داير) وشريك بروميديا",
-      roleEn: "Travel & Adventure Content Collective (Kaab El Dayr) & ProMedia Partner",
+      name: "Kaab El Dayr — كعب داير",
+      handle: "@kaabeldayr",
+      roleAr: "المشروع الوثائقي والبرنامج التلفزيوني وسلسلة رحلات المغامرة الرائدة (كعب داير) برعاية وإنتاج بروميديا",
+      roleEn: "Premier Adventure & Travel Documentary Series (Kaab El Dayr) Produced by ProMedia",
       isPriority: true,
       hasVideo: true,
       videoPath: "./assets/kaab/kaab_1.mp4",
       posterImage: "./assets/kaab/kaab_2.jpeg",
+      logo: "./assets/kaab/kaab_14.jpg",
       cartoonVisual: "./assets/kaab-cartoon/kaab_cartoon.jpeg",
       evidenceScreenshots: [
         "./assets/social-proof/proof_1.jpeg",
@@ -1244,69 +1243,104 @@ export const proposalData = {
         "./assets/kaab/kaab_21.jpeg"
       ],
       socialStats: {
-        tiktok: "3.7M",
+        total: "2.5M",
+        facebook: "1.6M",
+        instagram: "600K",
+        tiktok: "300K",
+        statusNoteAr: "إجمالي المتابعين محسوب برمجياً من الأرقام المعتمدة للمنصات الثلاث (1.6M + 600K + 300K = 2.5M)",
+        statusNoteEn: "Total Followers calculated programmatically from platform metrics (1.6M + 600K + 300K = 2.5M)"
+      },
+      links: [
+        { label: "Instagram (@kaabeldayr)", url: "https://www.instagram.com/elzuzzat/" },
+        { label: "Facebook (كعب داير)", url: "https://web.facebook.com/elzuzzat/" }
+      ],
+      fitAr: "الركيزة الافتتاحية الكبرى والمحور البصري لحملة نويبع كامبس؛ يمتلك أصولاً بصرية أصلية وفيديو ميدانياً فائق الجودة تم تصويره في سيناء، مع قاعدة متابعين ضخمة وقدرة استثنائية على جذب جمهور التخييم والمغامرة.",
+      fitEn: "The premier centerpiece for Nuweiba Camps: features verified cinematic Sinai assets, episodic narrative capabilities, and an engaged audience passionate about Sinai escapes.",
+      creativeAnglesAr: "سلسلة 'كعب داير في نويبع' التلفزيونية والرقمية: 3 حلقات خاصة لاستكشاف مخيمات نويبع البدوية، الغوص في خليج العقبة، وتوثيق تفاصيل المعايشة الحقيقية.",
+      creativeAnglesEn: "'Kaab El Dayr in Nuweiba' episodic travel showcase: exploring distinct camps, authentic Bedouin cooking, and real tranquil escapes."
+    },
+    {
+      id: "elzuzzat",
+      rank: 2,
+      name: "ElZuzzat — الزوزات",
+      handle: "@elzuzzat",
+      roleAr: "الفريق الثلاثي لصناعة محتوى السفر الشبابي والاستكشاف الميداني الشريك لبروميديا",
+      roleEn: "The 3-Member Youth Travel & Adventure Creator Collective Partnering with ProMedia",
+      avatar: "./assets/kaab/kaab_2.jpeg",
+      gallery: [
+        "./assets/kaab/kaab_15.jpeg",
+        "./assets/kaab/kaab_16.jpeg",
+        "./assets/kaab/kaab_22.jpeg",
+        "./assets/kaab/kaab_23.jpeg"
+      ],
+      socialStats: {
+        total: "9.7M",
         facebook: "4.6M",
         instagram: "1.4M",
-        total: "9.7M",
-        statusNoteAr: "أرقام إحصائية مأخوذة من شريحة العرض المقدمة (تخضع للتحقق الجاري)",
-        statusNoteEn: "Figures cited directly from supplied presentation slide (pending live verification)"
+        tiktok: "3.7M",
+        statusNoteAr: "إجمالي المتابعين المعلن للمجموعة عبر قنواتها المجمعة (4.6M + 1.4M + 3.7M = 9.7M)",
+        statusNoteEn: "Total Followers reported for the group across social channels (4.6M + 1.4M + 3.7M = 9.7M)"
       },
       links: [
         { label: "Instagram (@elzuzzat)", url: "https://www.instagram.com/elzuzzat/" },
         { label: "Facebook (elzuzzat)", url: "https://web.facebook.com/elzuzzat/" }
       ],
-      // Mohamed Elhagan Dedicated Profile Spotlight
-      leaderProfile: {
-        nameAr: "محمد الهجان (Mohamed Elhagan)",
-        nameEn: "Mohamed Elhagan",
-        titleAr: "المدير الإبداعي والرئيس التنفيذي لشركة بروميديا للإنتاج (Founder & CEO, ProMedia)",
-        titleEn: "Creative Director & Founder/CEO, ProMedia Production House",
-        avatar: "./assets/elhagan/mohamed_elhagan_main.jpg",
-        bioAr: "مؤسس والرئيس التنفيذي لشركة بروميديا (ProMedia Production House) ومديرها الإبداعي. يتمتع بخبرة ريادية واسعة في الإخراج الإبداعي، وتطوير الحملات الإعلانية، وإنتاج الأفلام الوثائقية والبرامج التلفزيونية والمحتوى الرقمي واسع التأثير.",
-        bioEn: "Creative Director and Founder/CEO of ProMedia Production House. Brings extensive leadership and creative direction experience in advertising campaigns, broadcast TV programs, documentaries, and high-impact digital content.",
-        links: [
-          { label: "Instagram (@m.ellhagan)", url: "https://www.instagram.com/m.ellhagan/" },
-          { label: "Facebook (MohamedElhaganPromedia)", url: "https://web.facebook.com/MohamedElhaganPromedia/" }
-        ],
-        socialStats: {
-          facebook: "1M",
-          instagram: "600K",
-          tiktok: "300K",
-          noteAr: "أرقام معطاة ومقدمة من المشروع (غير مدققة بشكل مستقل)",
-          noteEn: "Supplied project figures (not independently verified)"
-        }
-      },
       members: [
-        {
-          name: "Mohamed Elhagan — محمد الهجان",
-          roleAr: "المدير الإبداعي ورئيس بروميديا",
-          roleEn: "Creative Director & CEO, ProMedia",
-          bioAr: "القيادة الإبداعية والاستراتيجية، صياغة زوايا التناول والإخراج الفني لحملة نويبع كامبس.",
-          bioEn: "Creative & strategic leadership, directing the visual concepts and episodic narrative for Nuweiba Camps."
-        },
         {
           name: "Mazen — مازن",
           roleAr: "صانع محتوى وسفير رحلات",
           roleEn: "Travel Storyteller & Host",
-          bioAr: "صانع محتوى وعضو فريق كعب داير، يركز على توثيق روح الرحلة وتفاصيل السفر والتفاعل التلقائي مع الطبيعة والمجتمعات المحلية.",
-          bioEn: "Creator & core Kaab El Dayr team member, focusing on documenting journey dynamics, outdoor lifestyle, and candid interactions."
+          bioAr: "صانع محتوى وعضو فريق الزوزات، يركز على توثيق روح الرحلة وتفاصيل السفر والتفاعل التلقائي مع الطبيعة والمجتمعات المحلية.",
+          bioEn: "Creator & core ElZuzzat team member, focusing on documenting journey dynamics, outdoor lifestyle, and candid interactions."
         },
         {
           name: "Assaf / Moaaz — عساف / معاذ",
           roleAr: "مستكشف ومغامر ميداني",
           roleEn: "Field Explorer & Outdoor Creator",
-          bioAr: "صانع محتوى ومغامر ضمن فريق كعب داير، يضيف طاقة حركية وتوثيقاً سينمائياً للمناطق البرية والأنشطة في سيناء.",
-          bioEn: "Creator & adventure explorer in Kaab El Dayr, bringing dynamic energy and cinematic outdoor storytelling in Sinai."
+          bioAr: "صانع محتوى ومغامر ضمن فريق الزوزات، يضيف طاقة حركية وتوثيقاً سينمائياً للمناطق البرية والأنشطة في سيناء.",
+          bioEn: "Creator & adventure explorer in ElZuzzat, bringing dynamic energy and cinematic outdoor storytelling in Sinai."
+        },
+        {
+          name: "Mohamed Elhagan — محمد الهجان",
+          roleAr: "القيادة الإبداعية والتنفيذية",
+          roleEn: "Creative & Strategic Leadership",
+          bioAr: "الرؤية الاستراتيجية والإشراف الفني على تناغم السرد البصري لمجموعة الزوزات.",
+          bioEn: "Strategic & creative director overseeing visual style and content harmony for the collective."
         }
       ],
-      fitAr: "المرشح الأكثر جاهزية وتوافقاً؛ يمتلك أصولاً بصرية أصلية وفيديو ميدانياً تم تصويره في سيناء، مع قاعدة جماهيرية ضخمة تبلغ 9.7 مليون متابع مهتمين بالسياحة والتخييم والحرية.",
-      fitEn: "The premier candidate with maximum synergy: possesses extensive verified local assets and on-ground video footage in Sinai, commanding an audience of 9.7M interested in open-air travel and camping.",
-      creativeAnglesAr: "سلسلة 'كعب داير في نويبع' تتضمن تحدي الإقامة في 3 كامبات مختلفة، وطهي وجبة بدوية على الشاطئ، وتوثيق تفاصيل الطريق وسحر الهدوء.",
-      creativeAnglesEn: "'Kaab El Dayr in Nuweiba' episodic road-trip: exploring 3 distinct camps, cooking authentic Bedouin dinners on the shore, and experiencing real off-grid tranquility."
+      fitAr: "فريق ثلاثي يتمتع بشعبية طاغية لدى جيل الشباب وطلاب الجامعات، قادر على نقل روح الصحبة والمغامرة الشبابية في مخيمات نويبع.",
+      fitEn: "Dynamic 3-member collective commanding immense reach among Gen Z and university travel circles, capturing the raw fun of camp trips with friends.",
+      creativeAnglesAr: "تحدي الشلة: 'أسبوع كامل في نويبع بميزانية شبابية وتحديات يومية بين مازن ومعاذ والهجان'.",
+      creativeAnglesEn: "Crew Challenge: 'One full week in Nuweiba camps with daily adventure challenges between the collective'."
+    },
+    {
+      id: "elhagan-profile",
+      isStandaloneLeader: true,
+      name: "Mohamed Elhagan — محمد الهجان",
+      handle: "@m.ellhagan",
+      nameAr: "محمد الهجان (Mohamed Elhagan)",
+      nameEn: "Mohamed Elhagan",
+      titleAr: "المدير الإبداعي والرئيس التنفيذي لشركة بروميديا للإنتاج (Founder & CEO, ProMedia)",
+      titleEn: "Creative Director & Founder/CEO, ProMedia Production House",
+      avatar: "./assets/elhagan/mohamed_elhagan_main.jpg",
+      bioAr: "مؤسس والرئيس التنفيذي لشركة بروميديا (ProMedia Production House) ومديرها الإبداعي. يتمتع بخبرة ريادية واسعة في الإخراج الإبداعي، وتطوير الحملات الإعلانية، وإنتاج الأفلام الوثائقية والبرامج التلفزيونية والمحتوى الرقمي واسع التأثير.",
+      bioEn: "Creative Director and Founder/CEO of ProMedia Production House. Brings extensive leadership and creative direction experience in advertising campaigns, broadcast TV programs, documentaries, and high-impact digital content.",
+      socialStats: {
+        total: "1.9M",
+        facebook: "1M",
+        instagram: "600K",
+        tiktok: "300K",
+        noteAr: "إجمالي المتابعين الخاص بالأستاذ محمد الهجان (1M + 600K + 300K = 1.9M) وفق الأرقام المعطاة",
+        noteEn: "Total Followers for Mohamed Elhagan (1M + 600K + 300K = 1.9M) based on supplied figures"
+      },
+      links: [
+        { label: "Instagram (@m.ellhagan)", url: "https://www.instagram.com/m.ellhagan/" },
+        { label: "Facebook (MohamedElhaganPromedia)", url: "https://web.facebook.com/MohamedElhaganPromedia/" }
+      ]
     },
     {
       id: "ahmed-badawy",
-      rank: 2,
+      rank: 3,
       name: "Ahmed Badawy — أحمد بدوي",
       handle: "@ahmedbadawy",
       roleAr: "صانع محتوى لايف ستايل وسفر وتجارب شبابية",
@@ -1317,8 +1351,17 @@ export const proposalData = {
         "./assets/mega/ahmed_badawy_2.jpeg",
         "./assets/mega/ahmed_badawy_3.jpeg"
       ],
-      statusAr: "أصول وصور الحساب متوفرة محلياً (3 ملفات) | الأرقام قيد التدقيق الرسمي",
-      statusEn: "Local profile images available (3 files) | Live metrics undergoing official verification",
+      socialStats: {
+        total: "Pending",
+        facebook: "Pending",
+        instagram: "Pending",
+        tiktok: "Pending",
+        statusNoteAr: "أصول وصور الحساب متوفرة محلياً | الأرقام قيد التدقيق الرسمي",
+        statusNoteEn: "Local profile images available | Live follower metrics undergoing verification"
+      },
+      links: [
+        { label: "Instagram (@ahmedbadawy)", url: "https://www.instagram.com/ahmedbadawy/" }
+      ],
       fitAr: "يتمتع بأسلوب سردي شبابي ممتع وقدرة على تبسيط تجارب السفر وخلق تفاعل مرتفع بين أوساط طلاب الجامعات والشباب.",
       fitEn: "Commands a vibrant, engaging youth storytelling style ideal for engaging university students and first-time Sinai travelers.",
       creativeAnglesAr: "دليل 'إزاي تقضي ويك إند في نويبع بأقل ميزانية وأحلى تجربة مع أصحابك'.",
@@ -1326,7 +1369,7 @@ export const proposalData = {
     },
     {
       id: "kiro",
-      rank: 3,
+      rank: 4,
       name: "Kiro — كيرو",
       handle: "@kiro",
       roleAr: "صانع محتوى مرئي وترفيه وسياحة شبابية",
@@ -1337,8 +1380,17 @@ export const proposalData = {
         "./assets/mega/kiro_2.jpeg",
         "./assets/mega/kiro_3.jpeg"
       ],
-      statusAr: "أصول وصور الحساب متوفرة محلياً (3 ملفات) | الأرقام قيد التدقيق الرسمي",
-      statusEn: "Local profile images available (3 files) | Live metrics undergoing official verification",
+      socialStats: {
+        total: "Pending",
+        facebook: "Pending",
+        instagram: "Pending",
+        tiktok: "Pending",
+        statusNoteAr: "أصول وصور الحساب متوفرة محلياً | الأرقام قيد التدقيق الرسمي",
+        statusNoteEn: "Local profile images available | Live follower metrics undergoing verification"
+      },
+      links: [
+        { label: "Instagram (@kiro)", url: "https://www.instagram.com/kiro/" }
+      ],
       fitAr: "محتواه يتسم بالحيوية والفكاهة وسرعة الوصول لتريندات السوشيال ميديا، مما يمنح العلامة انتشاراً عفوياً واسعاً.",
       fitEn: "High-energy comedic and lifestyle delivery capable of driving organic trend virality among younger demographics.",
       creativeAnglesAr: "تحدي 'يوم كامل في كامب بدون واي فاي وموبايل.. هل نقدر نصمد؟'",
@@ -1346,7 +1398,7 @@ export const proposalData = {
     },
     {
       id: "karim-elsayed",
-      rank: 4,
+      rank: 5,
       name: "Karim El Sayed — كريم السيد",
       handle: "@karimelsayed",
       roleAr: "صانع محتوى وثائقي وقصص سفر وتجارب إنسانية",
@@ -1359,8 +1411,17 @@ export const proposalData = {
         "./assets/mega/karim_4.jpeg",
         "./assets/mega/karim_5.jpeg"
       ],
-      statusAr: "أصول وصور الحساب متوفرة محلياً (5 ملفات) | الأرقام قيد التدقيق الرسمي",
-      statusEn: "Local profile images available (5 files) | Live metrics undergoing official verification",
+      socialStats: {
+        total: "Pending",
+        facebook: "Pending",
+        instagram: "Pending",
+        tiktok: "Pending",
+        statusNoteAr: "أصول وصور الحساب متوفرة محلياً | الأرقام قيد التدقيق الرسمي",
+        statusNoteEn: "Local profile images available | Live follower metrics undergoing verification"
+      },
+      links: [
+        { label: "Instagram (@karimelsayed)", url: "https://www.instagram.com/karimelsayed/" }
+      ],
       fitAr: "صانع محتوى ذو مصداقية ثقافية عالية، يجذب فئات المهنيين والأسر والمسافرين الباحثين عن المعنى والأصالة والعمق.",
       fitEn: "High cultural credibility and thoughtful narrative style appealing strongly to working professionals and thoughtful explorers.",
       creativeAnglesAr: "وثائقي قصير: 'سر نويبع.. ليه المكان ده بيرجع روحك أحسن من الأول؟'",
@@ -1368,7 +1429,7 @@ export const proposalData = {
     },
     {
       id: "basant-noureldin",
-      rank: 5,
+      rank: 6,
       name: "Basant Nour El Din — بسنت نور الدين",
       handle: "@basantnoureldin",
       roleAr: "صانعة محتوى سياحي وثقافي واكتشاف تاريخي",
@@ -1379,8 +1440,17 @@ export const proposalData = {
         "./assets/mega/basant_2.jpeg",
         "./assets/mega/basant_3.jpeg"
       ],
-      statusAr: "أصول وصور الحساب متوفرة محلياً (3 ملفات) | الأرقام قيد التدقيق الرسمي",
-      statusEn: "Local profile images available (3 files) | Live metrics undergoing official verification",
+      socialStats: {
+        total: "Pending",
+        facebook: "Pending",
+        instagram: "Pending",
+        tiktok: "Pending",
+        statusNoteAr: "أصول وصور الحساب متوفرة محلياً | الأرقام قيد التدقيق الرسمي",
+        statusNoteEn: "Local profile images available | Live follower metrics undergoing verification"
+      },
+      links: [
+        { label: "Instagram (@basantnoureldin)", url: "https://www.instagram.com/basantnoureldin/" }
+      ],
       fitAr: "وجه سياحي موثوق ومحبوب لدى كافة فئات المجتمع والعائلات، تقدم سرديات دافئة عن التاريخ والطبيعة والتقاليد السيناوية.",
       fitEn: "A trusted and universally respected cultural tourism figure presenting warm, engaging explorations of Sinai heritage.",
       creativeAnglesAr: "جولة تاريخية وبيئية: 'أسرار الطبيعة وجبال سيناء بين نويبع ودهب وسانت كاترين'.",

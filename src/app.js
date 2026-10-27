@@ -27,18 +27,17 @@ const sectionKeys = [
   { key: 's05', id: 'promedia-model', num: '05' },
   { key: 's06', id: 'mega-influencers', num: '06' },
   { key: 's07', id: 'mini-influencers', num: '07' },
-  { key: 's_inf_net', id: 'influencer-network', num: '08' },
-  { key: 's_ugc_creators', id: 'ugc-creators', num: '09' },
-  { key: 's_packages', id: 'campaign-packages', num: '10' },
-  { key: 's08', id: 'ugc-production', num: '11' },
-  { key: 's09', id: 'egc-production', num: '12' },
-  { key: 's10', id: 'content-pillars', num: '13' },
-  { key: 's11', id: 'paid-media', num: '14' },
-  { key: 's12', id: 'digital-experience', num: '15' },
-  { key: 's13', id: 'kpis', num: '16' },
-  { key: 's14', id: 'roadmap', num: '17' },
-  { key: 's15', id: 'reference-board', num: '18' },
-  { key: 's16', id: 'why-promedia', num: '19' }
+  { key: 's_ugc_creators', id: 'ugc-creators', num: '08' },
+  { key: 's_packages', id: 'campaign-packages', num: '09' },
+  { key: 's08', id: 'ugc-production', num: '10' },
+  { key: 's09', id: 'egc-production', num: '11' },
+  { key: 's10', id: 'content-pillars', num: '12' },
+  { key: 's11', id: 'paid-media', num: '13' },
+  { key: 's12', id: 'digital-experience', num: '14' },
+  { key: 's13', id: 'kpis', num: '15' },
+  { key: 's14', id: 'roadmap', num: '16' },
+  { key: 's15', id: 'reference-board', num: '17' },
+  { key: 's16', id: 'why-promedia', num: '18' }
 ];
 
 // Initialize Website
@@ -424,7 +423,79 @@ function renderAllSections() {
         </div>
 
         <div class="creator-cards-list">
-          ${proposalData.megaCreators.map(creator => `
+          ${proposalData.megaCreators.map(creator => {
+            if (creator.isStandaloneLeader) {
+              return `
+                <!-- Dedicated Standalone Profile: Mohamed Elhagan (Founder & CEO, ProMedia) -->
+                <div class="creator-card-full priority-border" style="background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); color:#FFFFFF;">
+                  <div class="creator-card-header" style="border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 16px;">
+                    <div class="creator-title-group">
+                      <div class="creator-rank-badge" style="background: var(--color-gold); color: var(--color-navy);">CEO</div>
+                      <div>
+                        <h3 class="creator-header-name" style="color: #FFFFFF;">${currentLang === 'ar' ? creator.nameAr : creator.nameEn}</h3>
+                        <div class="creator-header-handle" style="color: var(--color-warm-sand); font-weight: 700;">
+                          ${currentLang === 'ar' ? creator.titleAr : creator.titleEn}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="priority-flag" style="background: rgba(245, 158, 11, 0.2); color: var(--color-gold); border: 1px solid var(--color-gold);">
+                      ★ ${currentLang === 'ar' ? 'القيادة الإبداعية والتنفيذية لبروميديا' : 'ProMedia Founder & Creative Director'}
+                    </div>
+                  </div>
+
+                  <div class="creator-card-body" style="grid-template-columns: 240px 1fr;">
+                    <div class="creator-visual-col">
+                      <img src="${creator.avatar}" alt="${creator.name}" class="creator-main-image lightbox-trigger" style="aspect-ratio: 1; object-fit: cover; border-radius: var(--radius-lg); border: 2px solid var(--color-gold);" />
+                    </div>
+
+                    <div class="creator-details-col">
+                      <p style="font-size: 0.95rem; color: #CBD5E1; line-height: 1.6; margin-bottom: 20px;">
+                        ${currentLang === 'ar' ? creator.bioAr : creator.bioEn}
+                      </p>
+
+                      <!-- Mohamed Elhagan Strict Follower Stats Layout -->
+                      <div class="creator-stats-panel" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); margin-bottom: 20px;">
+                        <div class="stats-panel-title" style="color: var(--color-warm-sand);">
+                          ${currentLang === 'ar' ? 'إجمالي المتابعين وإحصائيات المنصات المعتمدة:' : 'Total Followers & Platform Breakdown:'}
+                        </div>
+                        <div class="stats-numbers-row">
+                          <div>
+                            <div class="stat-metric-val" style="color: var(--color-gold); font-size: 1.5rem;">${creator.socialStats.total}</div>
+                            <div class="stat-metric-platform">${currentLang === 'ar' ? 'إجمالي المتابعين (Total Followers)' : 'Total Followers'}</div>
+                          </div>
+                          <div>
+                            <div class="stat-metric-val">${creator.socialStats.facebook}</div>
+                            <div class="stat-metric-platform">Facebook</div>
+                          </div>
+                          <div>
+                            <div class="stat-metric-val">${creator.socialStats.instagram}</div>
+                            <div class="stat-metric-platform">Instagram</div>
+                          </div>
+                          <div>
+                            <div class="stat-metric-val">${creator.socialStats.tiktok}</div>
+                            <div class="stat-metric-platform">TikTok</div>
+                          </div>
+                        </div>
+                        <div class="stats-disclaimer-text" style="color: #94A3B8;">
+                          ${currentLang === 'ar' ? creator.socialStats.noteAr : creator.socialStats.noteEn}
+                        </div>
+                      </div>
+
+                      <div class="creator-links-group">
+                        ${creator.links.map(l => `
+                          <a href="${l.url}" target="_blank" rel="noopener noreferrer" class="btn-creator-link" style="background: rgba(255,255,255,0.12); color: #FFF; border-color: rgba(255,255,255,0.25);">
+                            <span>${l.label}</span>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                          </a>
+                        `).join('')}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              `;
+            }
+
+            return `
             <div class="creator-card-full ${creator.isPriority ? 'priority-border' : ''}">
               <div class="creator-card-header">
                 <div class="creator-title-group">
@@ -436,7 +507,7 @@ function renderAllSections() {
                 </div>
                 ${creator.isPriority ? `
                   <div class="priority-flag">
-                    ★ ${currentLang === 'ar' ? 'المرشح ذو الأولوية (ملف رئيسي متكامل)' : 'Priority Creator (Featured Dossier)'}
+                    ★ ${currentLang === 'ar' ? 'الافتتاحية الكبرى والمحور البصري (كعب داير)' : 'Featured Central Pillar (Kaab El Dayr)'}
                   </div>
                 ` : `
                   <div style="font-size:0.8rem; font-weight:700; color:var(--color-muted);">
@@ -447,6 +518,16 @@ function renderAllSections() {
 
               <div class="creator-card-body">
                 <div class="creator-visual-col">
+                  ${creator.logo ? `
+                    <!-- Kaab El Dayr Official Logo -->
+                    <div style="background: #FFFFFF; border-radius: var(--radius-md); padding: 18px; border: 1px solid var(--color-border); margin-bottom: 14px; text-align: center; box-shadow: var(--shadow-sm);">
+                      <div style="font-size: 0.72rem; color: var(--color-muted); font-weight: 700; margin-bottom: 8px; text-transform: uppercase;">
+                        ${currentLang === 'ar' ? 'شعار كعب داير الرسمي' : 'Official Kaab El Dayr Logo'}
+                      </div>
+                      <img src="${creator.logo}" alt="Kaab El Dayr Logo" class="lightbox-trigger" style="max-height: 120px; width: auto; object-fit: contain; margin: 0 auto; display: block;" />
+                    </div>
+                  ` : ''}
+
                   ${creator.hasVideo ? `
                     <div class="video-container">
                       <video controls class="video-player-element" poster="${creator.posterImage}">
@@ -475,85 +556,26 @@ function renderAllSections() {
                     </div>
                   ` : ''}
 
-                  <div class="creator-thumbs-grid">
-                    ${creator.gallery.slice(0, 4).map(img => `
-                      <img src="${img}" alt="Preview" class="creator-thumb-item lightbox-trigger" />
-                    `).join('')}
-                  </div>
+                  ${creator.gallery ? `
+                    <div class="creator-thumbs-grid" style="margin-top: 14px;">
+                      ${creator.gallery.slice(0, 4).map(img => `
+                        <img src="${img}" alt="Preview" class="creator-thumb-item lightbox-trigger" />
+                      `).join('')}
+                    </div>
+                  ` : ''}
                 </div>
 
                 <div class="creator-details-col">
-                  ${creator.leaderProfile ? `
-                    <!-- Dedicated Spotlight: Mohamed Elhagan (Creative Director & CEO, ProMedia) -->
-                    <div class="leader-spotlight-card" style="background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); color:#FFFFFF; border-radius: var(--radius-lg); padding: 22px; border: 1px solid rgba(255,255,255,0.15); margin-bottom: 22px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
-                      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:10px;">
-                        <div style="display:flex; align-items:center; gap:8px;">
-                          <span style="background:var(--color-gold); color:var(--color-navy); font-weight:800; font-size:0.75rem; padding:4px 10px; border-radius:var(--radius-full);">
-                            ${currentLang === 'ar' ? 'القيادة الإبداعية والتنفيذية لبروميديا' : 'ProMedia Founder & Creative Leadership'}
-                          </span>
-                        </div>
-                        <span style="font-size:0.75rem; color:var(--color-turquoise); font-weight:700;">
-                          ${currentLang === 'ar' ? 'ملف رسمي معتمد' : 'Official Verified Profile'}
-                        </span>
-                      </div>
-
-                      <div style="display:grid; grid-template-columns: 84px 1fr; gap: 18px; align-items:center;">
-                        <img src="${creator.leaderProfile.avatar}" alt="${creator.leaderProfile.nameAr}" style="width:84px; height:84px; border-radius:50%; object-fit:cover; border:2px solid var(--color-gold); box-shadow:0 4px 12px rgba(245,158,11,0.25);" class="lightbox-trigger" />
-                        <div>
-                          <h4 style="font-size:1.25rem; font-weight:800; color:#FFFFFF; margin-bottom:4px;">
-                            ${currentLang === 'ar' ? creator.leaderProfile.nameAr : creator.leaderProfile.nameEn}
-                          </h4>
-                          <div style="font-size:0.84rem; color:var(--color-warm-sand); font-weight:700; margin-bottom:6px;">
-                            ${currentLang === 'ar' ? creator.leaderProfile.titleAr : creator.leaderProfile.titleEn}
-                          </div>
-                          <p style="font-size:0.86rem; color:#CBD5E1; line-height:1.5; margin-bottom:12px;">
-                            ${currentLang === 'ar' ? creator.leaderProfile.bioAr : creator.leaderProfile.bioEn}
-                          </p>
-
-                          <!-- Mohamed Elhagan Official Clickable Links -->
-                          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom: 14px;">
-                            ${creator.leaderProfile.links.map(l => `
-                              <a href="${l.url}" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:6px; padding:6px 14px; border-radius:var(--radius-full); background:rgba(255,255,255,0.12); color:#FFFFFF; font-size:0.78rem; font-weight:700; border:1px solid rgba(255,255,255,0.25); text-decoration:none;">
-                                <span>${l.label}</span>
-                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                              </a>
-                            `).join('')}
-                          </div>
-
-                          <!-- Mohamed Elhagan Dedicated Social Media Stats -->
-                          ${creator.leaderProfile.socialStats ? `
-                            <div style="background: rgba(0, 0, 0, 0.25); border-radius: var(--radius-md); padding: 12px 14px; border: 1px solid rgba(255, 255, 255, 0.08);">
-                              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; text-align: center;">
-                                <div style="background: rgba(255, 255, 255, 0.05); padding: 8px 6px; border-radius: 8px;">
-                                  <div style="font-size: 1.15rem; font-weight: 800; color: #FFFFFF;">${creator.leaderProfile.socialStats.facebook}</div>
-                                  <div style="font-size: 0.72rem; color: #94A3B8; font-weight: 600; margin-top: 2px;">Facebook</div>
-                                </div>
-                                <div style="background: rgba(255, 255, 255, 0.05); padding: 8px 6px; border-radius: 8px;">
-                                  <div style="font-size: 1.15rem; font-weight: 800; color: var(--color-gold);">${creator.leaderProfile.socialStats.instagram}</div>
-                                  <div style="font-size: 0.72rem; color: #94A3B8; font-weight: 600; margin-top: 2px;">Instagram</div>
-                                </div>
-                                <div style="background: rgba(255, 255, 255, 0.05); padding: 8px 6px; border-radius: 8px;">
-                                  <div style="font-size: 1.15rem; font-weight: 800; color: var(--color-turquoise);">${creator.leaderProfile.socialStats.tiktok}</div>
-                                  <div style="font-size: 0.72rem; color: #94A3B8; font-weight: 600; margin-top: 2px;">TikTok</div>
-                                </div>
-                              </div>
-                              <div style="font-size: 0.68rem; color: #94A3B8; margin-top: 8px; text-align: center; font-style: italic;">
-                                ${currentLang === 'ar' ? creator.leaderProfile.socialStats.noteAr : creator.leaderProfile.socialStats.noteEn}
-                              </div>
-                            </div>
-                          ` : ''}
-                        </div>
-                      </div>
-                    </div>
-                  ` : ''}
-
+                  <!-- Follower Statistics Panel (Strict Follower Counts, Not Views) -->
                   ${creator.socialStats ? `
                     <div class="creator-stats-panel">
-                      <div class="stats-panel-title">${currentLang === 'ar' ? 'إحصائيات المتابعين (وفق ملف العرض المقدم):' : 'Audience Statistics (Per Supplied Deck):'}</div>
+                      <div class="stats-panel-title">
+                        ${currentLang === 'ar' ? 'إجمالي المتابعين وإحصائيات المنصات المعتمدة:' : 'Total Followers & Platform Breakdown:'}
+                      </div>
                       <div class="stats-numbers-row">
                         <div>
-                          <div class="stat-metric-val">${creator.socialStats.tiktok}</div>
-                          <div class="stat-metric-platform">TikTok</div>
+                          <div class="stat-metric-val" style="color:var(--color-gold); font-size: 1.45rem;">${creator.socialStats.total}</div>
+                          <div class="stat-metric-platform">${currentLang === 'ar' ? 'إجمالي المتابعين (Total Followers)' : 'Total Followers'}</div>
                         </div>
                         <div>
                           <div class="stat-metric-val">${creator.socialStats.facebook}</div>
@@ -564,35 +586,23 @@ function renderAllSections() {
                           <div class="stat-metric-platform">Instagram</div>
                         </div>
                         <div>
-                          <div class="stat-metric-val" style="color:var(--color-gold);">${creator.socialStats.total}</div>
-                          <div class="stat-metric-platform">${currentLang === 'ar' ? 'الإجمالي' : 'Total'}</div>
+                          <div class="stat-metric-val">${creator.socialStats.tiktok}</div>
+                          <div class="stat-metric-platform">TikTok</div>
                         </div>
                       </div>
-                      <div class="stats-disclaimer-text">${currentLang === 'ar' ? creator.socialStats.statusNoteAr : creator.socialStats.statusNoteEn}</div>
+                      <div class="stats-disclaimer-text">
+                        ${currentLang === 'ar' ? creator.socialStats.statusNoteAr : creator.socialStats.statusNoteEn}
+                      </div>
                     </div>
-                  ` : `
-                    <div style="background:var(--color-bg-light); padding:12px 16px; border-radius:var(--radius-md); border:1px solid var(--color-border); font-size:0.85rem; color:var(--color-slate); margin-bottom:18px;">
-                      <strong>${currentLang === 'ar' ? 'حالة التحقق:' : 'Verification Status:'}</strong>
-                      <span>${currentLang === 'ar' ? creator.statusAr : creator.statusEn}</span>
-                    </div>
-                  `}
+                  ` : ''}
 
                   ${creator.members ? `
                     <div class="team-members-box">
-                      <div class="team-members-title">${currentLang === 'ar' ? 'أعضاء الفريق والقيادة الإبداعية:' : 'Team Members & Creative Leadership:'}</div>
+                      <div class="team-members-title">${currentLang === 'ar' ? 'أعضاء الفريق الثلاثي:' : 'Collective Members:'}</div>
                       ${creator.members.map(m => `
                         <div class="member-item">
                           <div class="member-name">${m.name}</div>
                           <div class="member-bio">${currentLang === 'ar' ? m.bioAr : m.bioEn}</div>
-                          ${m.links ? `
-                            <div style="display:flex; gap:8px; margin-top:6px;">
-                              ${m.links.map(ml => `
-                                <a href="${ml.url}" target="_blank" rel="noopener noreferrer" style="font-size:0.75rem; color:var(--color-primary); font-weight:700;">
-                                  ${ml.label} ↗
-                                </a>
-                              `).join('')}
-                            </div>
-                          ` : ''}
                         </div>
                       `).join('')}
                     </div>
@@ -614,7 +624,7 @@ function renderAllSections() {
                       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
                         <span style="font-size: 0.82rem; font-weight: 700; color: #FFFFFF; display: flex; align-items: center; gap: 6px;">
                           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-turquoise)" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-                          ${currentLang === 'ar' ? 'إثباتات السوشيال ميديا وتوثيق المشاهدات (11 - إثباتات السوشيال ميديا)' : 'Social Media Verification Evidence Screenshots'}
+                          ${currentLang === 'ar' ? 'إثباتات السوشيال ميديا وتوثيق الأرقام (11 - إثباتات السوشيال ميديا)' : 'Social Media Verification Evidence Screenshots'}
                         </span>
                         <span style="font-size: 0.72rem; color: #94A3B8;">${creator.evidenceScreenshots.length} ${currentLang === 'ar' ? 'لقطات موثقة' : 'Screenshots'}</span>
                       </div>
@@ -644,7 +654,8 @@ function renderAllSections() {
                 </div>
               </div>
             </div>
-          `).join('')}
+            `;
+          }).join('')}
         </div>
       </div>
     `;
@@ -704,59 +715,6 @@ function renderAllSections() {
               </div>
             `).join('')}
           </div>
-        </div>
-      </div>
-    `;
-  }
-
-  // INFLUENCER NETWORK (from Dream.xlsx)
-  const infNetEl = document.getElementById('section-influencer-network');
-  if (infNetEl && s.s_inf_net) {
-    infNetEl.innerHTML = `
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">${s.s_inf_net.tag}</span>
-          <h2 class="section-title">${s.s_inf_net.title}</h2>
-          <p class="section-subtitle">${s.s_inf_net.subtitle}</p>
-        </div>
-
-        <div class="editorial-alert alert-disclaimer">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-          <div>${s.s_inf_net.disclaimer}</div>
-        </div>
-
-        <div class="influencer-net-grid">
-          ${proposalData.influencerNetwork.map(inf => {
-            const initials = inf.name.split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase();
-            return `
-              <div class="influencer-net-card ${inf.isMega ? 'is-mega' : ''}">
-                ${inf.isMega ? `
-                  <span class="mega-source-badge">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                    <span>MEGA</span>
-                  </span>
-                ` : ''}
-
-                <div class="influencer-card-top">
-                  <div class="influencer-avatar-circle">${initials}</div>
-                  <div class="influencer-name-group">
-                    <h4 class="influencer-person-name">${inf.name}</h4>
-                    <span class="influencer-person-handle">${inf.handle}</span>
-                  </div>
-                </div>
-
-                <div class="influencer-followers-row">
-                  <span class="influencer-followers-label">${currentLang === 'ar' ? 'المتابعون بالجدول المصدري' : 'Spreadsheet Followers'}</span>
-                  <span class="influencer-followers-val">${inf.followers}</span>
-                </div>
-
-                <a href="${inf.url}" target="_blank" rel="noopener noreferrer" class="btn-influencer-ig">
-                  <span>${s.s_inf_net.visitProfileBtn}</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                </a>
-              </div>
-            `;
-          }).join('')}
         </div>
       </div>
     `;
@@ -1089,7 +1047,7 @@ function renderAllSections() {
     `;
   }
 
-  // S15: REFERENCE BOARD & CAMPS SHOWCASE
+  // S15: REFERENCE BOARD & DELIVERABLES
   const s15El = document.getElementById('section-reference-board');
   if (s15El) {
     s15El.innerHTML = `
@@ -1103,63 +1061,6 @@ function renderAllSections() {
         <div class="editorial-alert alert-notice">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
           <div>${s.s15.note}</div>
-        </div>
-
-        <h3 style="font-size:1.4rem; font-weight:800; color:var(--color-navy); margin-bottom:20px;">${d.influencers.campsTitle}</h3>
-        <p style="font-size:0.95rem; color:var(--color-slate); margin-bottom:28px;">${d.influencers.campsDesc}</p>
-
-        <div class="camps-showcase-grid">
-          ${proposalData.camps.map(camp => `
-            <div class="camp-card">
-              <div style="position:relative;">
-                <img src="${camp.image}" alt="${camp.nameAr}" class="camp-card-image lightbox-trigger" />
-                <div style="position:absolute; top:12px; left:12px; background:rgba(15,23,42,0.85); backdrop-filter:blur(6px); color:#38BDF8; font-size:0.75rem; font-weight:700; padding:4px 10px; border-radius:var(--radius-full); border:1px solid rgba(56,189,248,0.3); display:flex; align-items:center; gap:4px;">
-                  <span>✓</span>
-                  <span>${currentLang === 'ar' ? 'صورة رسمية معتمدة' : 'Official Verified Image'}</span>
-                </div>
-                ${camp.priceFrom ? `
-                  <div style="position:absolute; bottom:12px; right:12px; background:var(--color-gold); color:var(--color-navy); font-size:0.8rem; font-weight:800; padding:4px 10px; border-radius:var(--radius-full); box-shadow:0 2px 8px rgba(0,0,0,0.3);">
-                    ${currentLang === 'ar' ? 'يبدأ من: ' + camp.priceFrom : 'From ' + camp.priceFrom}
-                  </div>
-                ` : ''}
-              </div>
-
-              <div class="camp-card-content">
-                <h4 class="camp-name-title">${currentLang === 'ar' ? camp.nameAr : camp.nameEn}</h4>
-                <div style="font-size:0.82rem; color:var(--color-primary-dark); font-weight:700; margin-bottom:8px; display:flex; align-items:center; gap:4px;">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                  <span>${currentLang === 'ar' ? camp.locationAr : camp.locationEn}</span>
-                </div>
-                <p class="camp-desc-text">${currentLang === 'ar' ? camp.descAr : camp.descEn}</p>
-
-                <div style="border-top:1px solid var(--color-border); padding-top:14px; margin-top:auto;">
-                  <div style="font-size:0.75rem; color:var(--color-muted); margin-bottom:10px;">
-                    <strong>${currentLang === 'ar' ? 'المصدر المعتمد:' : 'Official Source:'}</strong> 
-                    <a href="${camp.officialDetailUrl}" target="_blank" rel="noopener noreferrer" style="color:var(--color-primary); text-decoration:underline;">nuweibacamps.com</a>
-                  </div>
-
-                  <div class="camp-social-links" style="display:flex; flex-wrap:wrap; gap:8px;">
-                    <a href="${camp.officialDetailUrl}" target="_blank" rel="noopener noreferrer" class="btn-camp-social" style="background:var(--color-primary); color:#FFFFFF; border-color:var(--color-primary);">
-                      <span>${currentLang === 'ar' ? 'صفحة الكامب بالمنصة' : 'Official Camp Page'}</span>
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                    </a>
-                    ${camp.social && camp.social.facebook ? `
-                      <a href="${camp.social.facebook}" target="_blank" rel="noopener noreferrer" class="btn-camp-social">
-                        <span>Facebook</span>
-                        ↗
-                      </a>
-                    ` : ''}
-                    ${camp.social && camp.social.instagram ? `
-                      <a href="${camp.social.instagram}" target="_blank" rel="noopener noreferrer" class="btn-camp-social">
-                        <span>Instagram</span>
-                        ↗
-                      </a>
-                    ` : ''}
-                  </div>
-                </div>
-              </div>
-            </div>
-          `).join('')}
         </div>
 
         <div class="deliverables-box">
