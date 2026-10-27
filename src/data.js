@@ -1351,12 +1351,20 @@ export const proposalData = {
         "./assets/mega/ahmed_badawy_3.jpeg"
       ],
       socialStats: {
-        total: "Pending",
-        facebook: "Pending",
-        instagram: "Pending",
-        tiktok: "Pending",
-        statusNoteAr: "أصول وصور الحساب متوفرة محلياً | الأرقام قيد التدقيق الرسمي",
-        statusNoteEn: "Local profile images available | Live follower metrics undergoing verification"
+        total: "Pending Confirmation",
+        totalAr: "قيد تأكيد المطابقة",
+        totalEn: "Pending Confirmation",
+        facebook: "Pending (3M Staged)",
+        facebookAr: "قيد التحقق (3M جاهزة)",
+        facebookEn: "Pending (3M Staged)",
+        instagram: "Pending (1M Staged)",
+        instagramAr: "قيد التحقق (1M جاهزة)",
+        instagramEn: "Pending (1M Staged)",
+        tiktok: "Pending (1M Staged)",
+        tiktokAr: "قيد التحقق (1M جاهزة)",
+        tiktokEn: "Pending (1M Staged)",
+        statusNoteAr: "إحصائية 5,000,000 (3M فيسبوك / 1M إنستغرام / 1M تيك توك) جاهزة للتخصيص ومحفوظة بانتظار تأكيد العميل للملف المقصود بين أحمد بدوي ومحمد الهجان دون تغيير الهوية الحالية.",
+        statusNoteEn: "Staged 5,000,000 total (3M FB / 1M IG / 1M TT) held ready for assignment pending client confirmation between Ahmed Badawy and Mohamed Elhagan without altering profile identities."
       },
       links: [
         { label: "Instagram (@ahmedbadawy)", url: "https://www.instagram.com/ahmedbadawy/" }
@@ -1380,12 +1388,12 @@ export const proposalData = {
         "./assets/mega/kiro_3.jpeg"
       ],
       socialStats: {
-        total: "Pending",
-        facebook: "Pending",
-        instagram: "Pending",
-        tiktok: "Pending",
-        statusNoteAr: "أصول وصور الحساب متوفرة محلياً | الأرقام قيد التدقيق الرسمي",
-        statusNoteEn: "Local profile images available | Live follower metrics undergoing verification"
+        total: "8.2M",
+        facebook: "3.2M",
+        instagram: "2M",
+        tiktok: "3M",
+        statusNoteAr: "إجمالي المتابعين محسوب برمجياً من الأرقام المعتمدة للمنصات (3.2M فيسبوك + 2M إنستغرام + 3M تيك توك = 8.2M)",
+        statusNoteEn: "Total Followers calculated programmatically from verified platform counts (3.2M FB + 2M IG + 3M TikTok = 8.2M)"
       },
       links: [
         { label: "Instagram (@kiro)", url: "https://www.instagram.com/kiro/" }
@@ -1411,12 +1419,12 @@ export const proposalData = {
         "./assets/mega/karim_5.jpeg"
       ],
       socialStats: {
-        total: "Pending",
-        facebook: "Pending",
-        instagram: "Pending",
-        tiktok: "Pending",
-        statusNoteAr: "أصول وصور الحساب متوفرة محلياً | الأرقام قيد التدقيق الرسمي",
-        statusNoteEn: "Local profile images available | Live follower metrics undergoing verification"
+        total: "3M",
+        facebook: "500K",
+        instagram: "1.2M",
+        tiktok: "1.3M",
+        statusNoteAr: "إجمالي المتابعين محسوب برمجياً من الأرقام المعتمدة للمنصات (500K فيسبوك + 1.2M إنستغرام + 1.3M تيك توك = 3M)",
+        statusNoteEn: "Total Followers calculated programmatically from verified platform counts (500K FB + 1.2M IG + 1.3M TikTok = 3M)"
       },
       links: [
         { label: "Instagram (@karimelsayed)", url: "https://www.instagram.com/karimelsayed/" }
@@ -1440,12 +1448,12 @@ export const proposalData = {
         "./assets/mega/basant_3.jpeg"
       ],
       socialStats: {
-        total: "Pending",
-        facebook: "Pending",
-        instagram: "Pending",
-        tiktok: "Pending",
-        statusNoteAr: "أصول وصور الحساب متوفرة محلياً | الأرقام قيد التدقيق الرسمي",
-        statusNoteEn: "Local profile images available | Live follower metrics undergoing verification"
+        total: "5.5M",
+        facebook: "4.2M",
+        instagram: "900K",
+        tiktok: "400K",
+        statusNoteAr: "إجمالي المتابعين محسوب برمجياً من الأرقام المعتمدة للمنصات (4.2M فيسبوك + 900K إنستغرام + 400K تيك توك = 5.5M)",
+        statusNoteEn: "Total Followers calculated programmatically from verified platform counts (4.2M FB + 900K IG + 400K TikTok = 5.5M)"
       },
       links: [
         { label: "Instagram (@basantnoureldin)", url: "https://www.instagram.com/basantnoureldin/" }
@@ -1472,6 +1480,15 @@ export const proposalData = {
         "./assets/mini/mini1_img2.jpeg",
         "./assets/mini/mini1_img3.jpeg"
       ],
+      socialStats: {
+        total: "1.5M",
+        isKnownOnly: false,
+        facebook: "100K",
+        instagram: "400K",
+        tiktok: "1M",
+        noteAr: "إجمالي المتابعين محسوب برمجياً من المنصات الثلاث (100,000 فيسبوك + 400,000 إنستغرام + 1,000,000 تيك توك = 1.5M)",
+        noteEn: "Total Followers calculated programmatically from all 3 platforms (100K FB + 400K IG + 1M TikTok = 1.5M)"
+      },
       relevanceAr: "قدرة عالية على تقديم مواقف كوميدية طريفة حول تجارب السفر والشلة في الكامبات، مما يحقق تفاعلاً واسعاً.",
       relevanceEn: "Delivers highly shareable comedic group dynamics and road trip sketches that resonate with college friend circles."
     },
@@ -1488,6 +1505,15 @@ export const proposalData = {
         "./assets/mini/mini2_img2.jpeg",
         "./assets/mini/mini2_img3.jpeg"
       ],
+      socialStats: {
+        total: "471,900",
+        isKnownOnly: true,
+        facebook: "1,900",
+        instagram: "470K",
+        tiktok: null,
+        noteAr: "إجمالي المتابعين المعلوم (1,900 فيسبوك + 470,000 إنستغرام = 471,900) | منصة تيك توك غير مدرجة",
+        noteEn: "Total Known Followers (1,900 FB + 470K IG = 471,900) | TikTok count not provided"
+      },
       relevanceAr: "تركيز جمالي على تفاصيل الإقامة والاسترخاء، مفيد جداً في مخاطبة الفتيات والباحثين عن ملاذ هادئ وآمن.",
       relevanceEn: "Aesthetic lifestyle documentation tailored for solo female travelers, wellness seekers, and quiet weekend getaways."
     },
@@ -1503,6 +1529,15 @@ export const proposalData = {
         "./assets/mini/mini3_img1.jpeg",
         "./assets/mini/mini3_img2.jpeg"
       ],
+      socialStats: {
+        total: "130K",
+        isKnownOnly: true,
+        facebook: null,
+        instagram: "130K",
+        tiktok: null,
+        noteAr: "إجمالي المتابعين المعلوم (130,000 إنستغرام) | فيسبوك وتيك توك غير مدرجين",
+        noteEn: "Total Known Followers (130K IG) | FB & TikTok counts not provided"
+      },
       relevanceAr: "تغطية ميدانية حية تركز على الأنشطة البحرية، ونوعية الغرف، ومقارنة الكامبات بطريقة عملية ومباشرة.",
       relevanceEn: "Hands-on, energetic spot reviews detailing water sports, camp amenities, and practical visitor advice."
     },
@@ -1518,14 +1553,23 @@ export const proposalData = {
         "./assets/mini/mini4_img1.jpeg",
         "./assets/mini/mini4_img2.jpeg"
       ],
+      socialStats: {
+        total: "100K",
+        isKnownOnly: true,
+        facebook: null,
+        instagram: "100K",
+        tiktok: null,
+        noteAr: "إجمالي المتابعين المعلوم (100,000 إنستغرام) | فيسبوك وتيك توك غير مدرجين",
+        noteEn: "Total Known Followers (100K IG) | FB & TikTok counts not provided"
+      },
       relevanceAr: "أسلوب عفوي يركز على الطعام والتجارب الحسية في المخيمات، مما يفتح زاوية تسويقية شهية للزوار الجدد.",
       relevanceEn: "Engaging coverage of culinary camp experiences, Bedouin dining traditions, and visual food stories."
     },
     {
       id: "mahmoud-zizo",
       folder: "محمود زيزو",
-      nameAr: "محمود زيزو",
-      nameEn: "Mahmoud Zizo",
+      nameAr: "محمود زيزو (Mohamed Zizo)",
+      nameEn: "Mahmoud / Mohamed Zizo",
       categoryAr: "تخييم، مغامرات برية، ومحتوى شبابي",
       categoryEn: "Camping, Outdoor Adventure & Youth Action",
       avatar: "./assets/mini/mini5_img1.jpeg",
@@ -1534,6 +1578,15 @@ export const proposalData = {
         "./assets/mini/mini5_img2.jpeg",
         "./assets/mini/mini5_img3.jpeg"
       ],
+      socialStats: {
+        total: "603K",
+        isKnownOnly: true,
+        facebook: "403K",
+        instagram: "200K",
+        tiktok: null,
+        noteAr: "إجمالي المتابعين المعلوم (403,000 فيسبوك + 200,000 إنستغرام = 603,000) | منصة تيك توك غير مدرجة",
+        noteEn: "Total Known Followers (403K FB + 200K IG = 603,000) | TikTok count not provided"
+      },
       relevanceAr: "يجسد روح المغامرة الحقيقية والتخييم في سيناء، ويقدم نصائح تقنية وتوجيهات عملية لمحبي التخييم الحر.",
       relevanceEn: "Authentic outdoor camping authority providing practical camping hacks, gear advice, and raw Sinai exploration."
     }

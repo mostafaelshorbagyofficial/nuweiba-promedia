@@ -574,19 +574,19 @@ function renderAllSections() {
                       </div>
                       <div class="stats-numbers-row">
                         <div>
-                          <div class="stat-metric-val" style="color:var(--color-gold); font-size: 1.45rem;">${creator.socialStats.total}</div>
+                          <div class="stat-metric-val" style="color:var(--color-gold); font-size: 1.45rem;">${currentLang === 'ar' ? (creator.socialStats.totalAr || creator.socialStats.total) : (creator.socialStats.totalEn || creator.socialStats.total)}</div>
                           <div class="stat-metric-platform">${currentLang === 'ar' ? 'إجمالي المتابعين (Total Followers)' : 'Total Followers'}</div>
                         </div>
                         <div>
-                          <div class="stat-metric-val">${creator.socialStats.facebook}</div>
+                          <div class="stat-metric-val">${currentLang === 'ar' ? (creator.socialStats.facebookAr || creator.socialStats.facebook) : (creator.socialStats.facebookEn || creator.socialStats.facebook)}</div>
                           <div class="stat-metric-platform">Facebook</div>
                         </div>
                         <div>
-                          <div class="stat-metric-val">${creator.socialStats.instagram}</div>
+                          <div class="stat-metric-val">${currentLang === 'ar' ? (creator.socialStats.instagramAr || creator.socialStats.instagram) : (creator.socialStats.instagramEn || creator.socialStats.instagram)}</div>
                           <div class="stat-metric-platform">Instagram</div>
                         </div>
                         <div>
-                          <div class="stat-metric-val">${creator.socialStats.tiktok}</div>
+                          <div class="stat-metric-val">${currentLang === 'ar' ? (creator.socialStats.tiktokAr || creator.socialStats.tiktok) : (creator.socialStats.tiktokEn || creator.socialStats.tiktok)}</div>
                           <div class="stat-metric-platform">TikTok</div>
                         </div>
                       </div>
@@ -690,6 +690,37 @@ function renderAllSections() {
               </div>
 
               <div class="mini-card-body">
+                ${mini.socialStats ? `
+                  <div class="mini-stats-box">
+                    <div class="mini-stats-top">
+                      <div class="mini-stats-badge">
+                        <span class="mini-stats-badge-label">
+                          ${mini.socialStats.isKnownOnly 
+                            ? (currentLang === 'ar' ? 'إجمالي المتابعين المعلوم (Known Followers):' : 'Total Known Followers:')
+                            : (currentLang === 'ar' ? 'إجمالي المتابعين (Total Followers):' : 'Total Followers:')}
+                        </span>
+                        <span class="mini-stats-badge-val">${mini.socialStats.total}</span>
+                      </div>
+                    </div>
+                    <div class="mini-platforms-grid">
+                      <div class="mini-platform-item ${mini.socialStats.facebook ? '' : 'is-unavailable'}">
+                        <span class="platform-name">Facebook</span>
+                        <span class="platform-count">${mini.socialStats.facebook || '—'}</span>
+                      </div>
+                      <div class="mini-platform-item ${mini.socialStats.instagram ? '' : 'is-unavailable'}">
+                        <span class="platform-name">Instagram</span>
+                        <span class="platform-count">${mini.socialStats.instagram || '—'}</span>
+                      </div>
+                      <div class="mini-platform-item ${mini.socialStats.tiktok ? '' : 'is-unavailable'}">
+                        <span class="platform-name">TikTok</span>
+                        <span class="platform-count">${mini.socialStats.tiktok || '—'}</span>
+                      </div>
+                    </div>
+                    <div class="mini-stats-note">
+                      ${currentLang === 'ar' ? mini.socialStats.noteAr : mini.socialStats.noteEn}
+                    </div>
+                  </div>
+                ` : ''}
                 <p class="mini-relevance-text">${currentLang === 'ar' ? mini.relevanceAr : mini.relevanceEn}</p>
               </div>
             </div>

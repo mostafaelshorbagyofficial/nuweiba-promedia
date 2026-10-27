@@ -1353,6 +1353,96 @@ button {
   line-height: 1.6;
 }
 
+/* Mini Creator Social Statistics Box */
+.mini-stats-box {
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.mini-stats-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.mini-stats-badge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 8px;
+}
+
+.mini-stats-badge-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.mini-stats-badge-val {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-gold);
+  font-family: var(--font-display);
+}
+
+.mini-platforms-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.mini-platform-item {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 8px 4px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mini-platform-item.is-unavailable {
+  background: rgba(0, 0, 0, 0.02);
+  opacity: 0.55;
+  border-style: dashed;
+}
+
+.mini-platform-item .platform-name {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--color-muted);
+  text-transform: uppercase;
+}
+
+.mini-platform-item .platform-count {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--color-navy);
+}
+
+.mini-platform-item.is-unavailable .platform-count {
+  color: #94A3B8;
+  font-weight: 400;
+}
+
+.mini-stats-note {
+  font-size: 0.72rem;
+  color: var(--color-muted);
+  line-height: 1.4;
+  margin-top: 6px;
+  font-style: italic;
+}
+
 /* Reference Video Cards */
 .ref-videos-grid {
   display: grid;
@@ -2689,6 +2779,18 @@ button {
 
   .creator-evidence-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mini-platforms-grid {
+    gap: 6px;
+  }
+
+  .mini-platform-item {
+    padding: 6px 2px;
+  }
+
+  .mini-platform-item .platform-count {
+    font-size: 0.85rem;
   }
 
   .brand-name {
