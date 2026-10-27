@@ -27,15 +27,18 @@ const sectionKeys = [
   { key: 's05', id: 'promedia-model', num: '05' },
   { key: 's06', id: 'mega-influencers', num: '06' },
   { key: 's07', id: 'mini-influencers', num: '07' },
-  { key: 's08', id: 'ugc-production', num: '08' },
-  { key: 's09', id: 'egc-production', num: '09' },
-  { key: 's10', id: 'content-pillars', num: '10' },
-  { key: 's11', id: 'paid-media', num: '11' },
-  { key: 's12', id: 'digital-experience', num: '12' },
-  { key: 's13', id: 'kpis', num: '13' },
-  { key: 's14', id: 'roadmap', num: '14' },
-  { key: 's15', id: 'reference-board', num: '15' },
-  { key: 's16', id: 'why-promedia', num: '16' }
+  { key: 's_inf_net', id: 'influencer-network', num: '08' },
+  { key: 's_ugc_creators', id: 'ugc-creators', num: '09' },
+  { key: 's_packages', id: 'campaign-packages', num: '10' },
+  { key: 's08', id: 'ugc-production', num: '11' },
+  { key: 's09', id: 'egc-production', num: '12' },
+  { key: 's10', id: 'content-pillars', num: '13' },
+  { key: 's11', id: 'paid-media', num: '14' },
+  { key: 's12', id: 'digital-experience', num: '15' },
+  { key: 's13', id: 'kpis', num: '16' },
+  { key: 's14', id: 'roadmap', num: '17' },
+  { key: 's15', id: 'reference-board', num: '18' },
+  { key: 's16', id: 'why-promedia', num: '19' }
 ];
 
 // Initialize Website
@@ -595,6 +598,152 @@ function renderAllSections() {
               </div>
             `).join('')}
           </div>
+        </div>
+      </div>
+    `;
+  }
+
+  // INFLUENCER NETWORK (from Dream.xlsx)
+  const infNetEl = document.getElementById('section-influencer-network');
+  if (infNetEl && s.s_inf_net) {
+    infNetEl.innerHTML = `
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">${s.s_inf_net.tag}</span>
+          <h2 class="section-title">${s.s_inf_net.title}</h2>
+          <p class="section-subtitle">${s.s_inf_net.subtitle}</p>
+        </div>
+
+        <div class="editorial-alert alert-disclaimer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          <div>${s.s_inf_net.disclaimer}</div>
+        </div>
+
+        <div class="influencer-net-grid">
+          ${proposalData.influencerNetwork.map(inf => {
+            const initials = inf.name.split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase();
+            return `
+              <div class="influencer-net-card ${inf.isMega ? 'is-mega' : ''}">
+                ${inf.isMega ? `
+                  <span class="mega-source-badge">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <span>MEGA</span>
+                  </span>
+                ` : ''}
+
+                <div class="influencer-card-top">
+                  <div class="influencer-avatar-circle">${initials}</div>
+                  <div class="influencer-name-group">
+                    <h4 class="influencer-person-name">${inf.name}</h4>
+                    <span class="influencer-person-handle">${inf.handle}</span>
+                  </div>
+                </div>
+
+                <div class="influencer-followers-row">
+                  <span class="influencer-followers-label">${currentLang === 'ar' ? 'المتابعون بالجدول المصدري' : 'Spreadsheet Followers'}</span>
+                  <span class="influencer-followers-val">${inf.followers}</span>
+                </div>
+
+                <a href="${inf.url}" target="_blank" rel="noopener noreferrer" class="btn-influencer-ig">
+                  <span>${s.s_inf_net.visitProfileBtn}</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </div>
+    `;
+  }
+
+  // UGC CREATORS DIRECTORY (from Dream.xlsx)
+  const ugcCreatorsEl = document.getElementById('section-ugc-creators');
+  if (ugcCreatorsEl && s.s_ugc_creators) {
+    ugcCreatorsEl.innerHTML = `
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">${s.s_ugc_creators.tag}</span>
+          <h2 class="section-title">${s.s_ugc_creators.title}</h2>
+          <p class="section-subtitle">${s.s_ugc_creators.subtitle}</p>
+        </div>
+
+        <div class="editorial-alert alert-notice">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+          <div>${s.s_ugc_creators.disclaimer}</div>
+        </div>
+
+        <div class="ugc-creators-grid">
+          ${proposalData.ugcCreators.map(creator => {
+            const initials = creator.name.split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase();
+            return `
+              <div class="ugc-creator-card">
+                <div class="ugc-avatar-wrapper">
+                  <div class="ugc-avatar-placeholder">${initials}</div>
+                </div>
+                <h4 class="ugc-creator-name">${creator.name}</h4>
+                <div class="ugc-creator-handle">${creator.handle}</div>
+                <div class="ugc-followers-pill">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  <span>${creator.followers} ${currentLang === 'ar' ? 'متابع' : 'Followers'}</span>
+                </div>
+                <a href="${creator.url}" target="_blank" rel="noopener noreferrer" class="btn-ugc-ig">
+                  <span>${s.s_ugc_creators.visitProfileBtn}</span>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </div>
+    `;
+  }
+
+  // CAMPAIGN PLANNING PACKAGES
+  const packagesEl = document.getElementById('section-campaign-packages');
+  if (packagesEl && s.s_packages) {
+    packagesEl.innerHTML = `
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">${s.s_packages.tag}</span>
+          <h2 class="section-title">${s.s_packages.title}</h2>
+          <p class="section-subtitle">${s.s_packages.subtitle}</p>
+        </div>
+
+        <div class="editorial-alert alert-disclaimer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          <div>${s.s_packages.disclaimer}</div>
+        </div>
+
+        <div class="campaign-packages-grid">
+          ${proposalData.campaignPackages.map(pkg => `
+            <div class="campaign-package-card">
+              <div class="package-top-bar">
+                <span class="package-opt-number">Option ${pkg.optionNum}</span>
+                <span class="package-badge-tag">${currentLang === 'ar' ? pkg.badgeAr : pkg.badgeEn}</span>
+              </div>
+              <h3 class="package-title-text">${currentLang === 'ar' ? pkg.titleAr : pkg.titleEn}</h3>
+              
+              <div class="package-comp-box">
+                <div class="package-comp-title">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  <span>${currentLang === 'ar' ? 'توزيع وهيكلية المشاركين' : 'Participant Composition'}</span>
+                </div>
+                <ul class="package-comp-list">
+                  ${(currentLang === 'ar' ? pkg.compositionAr : pkg.compositionEn).map(item => `
+                    <li class="package-comp-item">
+                      <span style="color:var(--color-primary); font-weight:800;">•</span>
+                      <span>${item}</span>
+                    </li>
+                  `).join('')}
+                </ul>
+              </div>
+
+              <div class="package-fit-box">
+                <div class="package-fit-label">${currentLang === 'ar' ? 'الجدوى والملاءمة الاستراتيجية:' : 'Strategic Rationale:'}</div>
+                <p class="package-fit-text">${currentLang === 'ar' ? pkg.fitAr : pkg.fitEn}</p>
+              </div>
+            </div>
+          `).join('')}
         </div>
       </div>
     `;

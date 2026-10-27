@@ -16,9 +16,12 @@ export const proposalData = {
       s03: "الفرص والتحدي",
       s04: "الجمهور المستهدف",
       s05: "محركات النمو",
-      s06: "كبار المؤثرين",
+      s06: "كبار المؤثرين (الاستراتيجي)",
       s07: "المؤثرون المصغرون",
-      s08: "محتوى المستخدم (UGC)",
+      s_inf_net: "شبكة المؤثرين (Dream)",
+      s_ugc_creators: "صُنّاع محتوى UGC",
+      s_packages: "باقات الحملات",
+      s08: "أفكار UGC الإبداعية",
       s09: "محتوى الفريق (EGC)",
       s10: "ركائز المحتوى",
       s11: "الإعلانات المدفوعة",
@@ -223,6 +226,29 @@ export const proposalData = {
           "إنشاء روابط تتبع مخصصة لكل صانع محتوى لقياس الإحالات",
           "إعداد تقارير أداء شاملة لتقييم العائد الاستثماري للحملة"
         ]
+      },
+      s_inf_net: {
+        id: "influencer-network",
+        tag: "شبكة المؤثرين · Dream Dataset",
+        title: "شبكة المؤثرين (Influencer Network)",
+        subtitle: "12 صانع محتوى تم استيرادهم من جدول البيانات المعتمد (Dream.xlsx) مع حفظ وسوم MEGA الرسمية",
+        disclaimer: "تنويه مهني: وسم 'MEGA' مخصص بدقة للأسماء المحددة في الجدول المصدري (هند مدحت، زويل، يارا عبد الحميد)، وأرقام المتابعين معطيات مرجعية تخضع للتحقق الجاري مع الحسابات الحية.",
+        visitProfileBtn: "زيارة الحساب على Instagram"
+      },
+      s_ugc_creators: {
+        id: "ugc-creators",
+        tag: "صُنّاع المحتوى العفوي · Dream Dataset",
+        title: "صُنّاع محتوى UGC (UGC Creators)",
+        subtitle: "دليل يضم 17 صانعة وصانع محتوى لتوثيق تجارب السفر الشاطئية الواقعية في نويبع",
+        disclaimer: "تنويه مهني: جميع أرقام المتابعين مستخرجة من جدول البيانات المرفق (Dream.xlsx)، وتخضع للمراجعة الحية ولا تمثل إحصائيات مدققة مسبقاً.",
+        visitProfileBtn: "زيارة حساب Instagram"
+      },
+      s_packages: {
+        id: "campaign-packages",
+        tag: "تخطيط الحملات · خيارات ونماذج السيناريو",
+        title: "باقات الحملات التسويقية وخيارات التخطيط",
+        subtitle: "ثلاثة نماذج تشغيلية متدرجة تدمج بين كبار المؤثرين وصغار المؤثرين ومشاركي GC",
+        disclaimer: "تنويه مهني: هذه الباقات تمثل خيارات تخطيطية وسيناريوهات مقترحة للدراسة، وليست باقات معتمدة أو أسعاراً تعاقدية جاهزة. يُحفظ مصطلح 'GC' كما ورد دون تأويل."
       },
       s07: {
         id: "mini-influencers",
@@ -589,9 +615,12 @@ export const proposalData = {
       s03: "Opportunity",
       s04: "Audience",
       s05: "Growth Model",
-      s06: "Mega Creators",
+      s06: "Strategic Mega Creators",
       s07: "Mini Creators",
-      s08: "UGC Production",
+      s_inf_net: "Influencer Network",
+      s_ugc_creators: "UGC Creators",
+      s_packages: "Campaign Packages",
+      s08: "UGC Creative Concepts",
       s09: "EGC Series",
       s10: "Content Pillars",
       s11: "Paid Media",
@@ -796,6 +825,29 @@ export const proposalData = {
           "Custom tracking links (UTMs) and unique codes for attribution",
           "Comprehensive campaign post-mortem reports evaluating performance and reach"
         ]
+      },
+      s_inf_net: {
+        id: "influencer-network",
+        tag: "Influencer Network · Dream Dataset",
+        title: "Influencer Network",
+        subtitle: "12 Influencer records imported from the verified Dream.xlsx dataset with explicit MEGA source tags",
+        disclaimer: "Source Note: The 'MEGA' tag is retained strictly for creators tagged in the source spreadsheet (Hind Medhat, Zowail, Yara Abdelhamid). Metrics reflect supplied records.",
+        visitProfileBtn: "View Instagram Profile"
+      },
+      s_ugc_creators: {
+        id: "ugc-creators",
+        tag: "Creator Directory · Dream Dataset",
+        title: "UGC Creators",
+        subtitle: "Comprehensive directory of 17 creators selected for authentic on-ground travel storytelling in Nuweiba",
+        disclaimer: "Data Integrity Note: Follower counts are supplied figures from Dream.xlsx and do not represent verified live analytics.",
+        visitProfileBtn: "View Instagram Profile"
+      },
+      s_packages: {
+        id: "campaign-packages",
+        tag: "Campaign Architecture · Planning Models",
+        title: "Campaign Packages & Planning Options",
+        subtitle: "Three phased scenario models combining Mega Influencers, Mini Influencers, and GC participants",
+        disclaimer: "Planning Clarification: These represent proposed planning scenarios for strategic evaluation, not approved packages. The term 'GC' is preserved as supplied."
       },
       s07: {
         id: "mini-influencers",
@@ -1392,6 +1444,105 @@ export const proposalData = {
   ],
 
   // Camps and Destinations verified directly from the official website: https://nuweibacamps.com/
+  // 17 UGC Creators directly from Dream.xlsx
+  ugcCreators: [
+    { name: "Habiba Magdy", followers: "2K", url: "https://www.instagram.com/_habibamagddy?igsi=MTFocDgxeWtob2Nl", handle: "@_habibamagddy" },
+    { name: "Tseby Othman", followers: "14K", url: "https://www.instagram.com/tesbiyyo?igsi=OG5iMm94azR5M2pk", handle: "@tesbiyyo" },
+    { name: "Nadeen Khalifa", followers: "3K", url: "https://www.instagram.com/nadeenkhaliifa?igsh=bHQ2MzQ4aDY2MWo5", handle: "@nadeenkhaliifa" },
+    { name: "Mayar Abdelsatar", followers: "5K", url: "https://www.instagram.com/mayar.abdelsattar?igsh=MW14dmFwbGlwMnNsOQ==", handle: "@mayar.abdelsattar" },
+    { name: "Yostina Khairy", followers: "11K", url: "https://www.instagram.com/dr.youstina_khairy?igsh=MWo0bnl2cGtmb3k5dQ==", handle: "@dr.youstina_khairy" },
+    { name: "Maria Sameh", followers: "5K", url: "https://www.instagram.com/maria_sameh_?igsh=MTUxZ3NyYjdzNG51cA==", handle: "@maria_sameh_" },
+    { name: "Habiba Kera", followers: "3K", url: "https://www.instagram.com/habibakeraaa?igsh=cDVyYWU5bjQxbDBj", handle: "@habibakeraaa" },
+    { name: "Rahma Adel", followers: "7K", url: "https://www.instagram.com/rahmaadel.abdelhamid?igsh=bW10MjRuYWlqN3lu", handle: "@rahmaadel.abdelhamid" },
+    { name: "Chrestine Ayad", followers: "26K", url: "https://www.instagram.com/bychristineayad?igsh=NDYzYnU1cDR6NXdr", handle: "@bychristineayad" },
+    { name: "Maryam elgayar", followers: "6K", url: "https://www.instagram.com/mariamelgaayar?igsh=MWpja2w3ODVraWFibg==", handle: "@mariamelgaayar" },
+    { name: "Marline Emad", followers: "1.6K", url: "https://www.instagram.com/marleneemad?igsh=MTc1emFqNGdydXJydQ==", handle: "@marleneemad" },
+    { name: "Hana Hasnin", followers: "22K", url: "https://www.instagram.com/hanahassaninn?igsh=eGc1M3Q2aHB0MzJm", handle: "@hanahassaninn" },
+    { name: "Donia Medhat", followers: "17K", url: "https://www.instagram.com/doniamedhatt_?igsh=czBwY3pjbWlhM2tk", handle: "@doniamedhatt_" },
+    { name: "Hala Mowafak", followers: "9K", url: "https://www.instagram.com/halamowafak?igsh=MXZjbGdpMWxnZTdqYw==", handle: "@halamowafak" },
+    { name: "Lina Bayomi", followers: "4K", url: "https://www.instagram.com/linabiomy?igsh=dmhwN2poNjFtZnh6", handle: "@linabiomy" },
+    { name: "Mariam Ramadan", followers: "7K", url: "https://www.instagram.com/mrym_ramadan12?igsh=MXY1cXdlYnM1azB5", handle: "@mrym_ramadan12" },
+    { name: "Esraa Sherif", followers: "7K", url: "https://www.instagram.com/esraasherif_?igsh=c3JkNXZ1ZW02ZXdr", handle: "@esraasherif_" }
+  ],
+
+  // 12 Influencer records from Dream.xlsx (with preserved MEGA source tags)
+  influencerNetwork: [
+    { name: "Yara Elbahnasawy", followers: "1M", url: "https://www.instagram.com/yarahbhnsawy?", handle: "@yarahbhnsawy", isMega: false, tag: null },
+    { name: "Raghda Yehia", followers: "276K", url: "https://www.instagram.com/raghdayahya_?", handle: "@raghdayahya_", isMega: false, tag: null },
+    { name: "Nourhan Emad", followers: "618K", url: "https://www.instagram.com/nourhan3mad_?", handle: "@nourhan3mad_", isMega: false, tag: null },
+    { name: "Nuha Shokry", followers: "1M", url: "https://www.instagram.com/nuha_shukry?", handle: "@nuha_shukry", isMega: false, tag: null },
+    { name: "Donia Gamal", followers: "1M", url: "https://www.instagram.com/doniaagamall?", handle: "@doniaagamall", isMega: false, tag: null },
+    { name: "Hind Medhat", followers: "1M", url: "https://www.instagram.com/hindmedhattfaroukk?", handle: "@hindmedhattfaroukk", isMega: true, tag: "MEGA" },
+    { name: "Zowail", followers: "1M", url: "https://www.instagram.com/zowaill?", handle: "@zowaill", isMega: true, tag: "MEGA" },
+    { name: "Emad Assem", followers: "375K", url: "https://www.instagram.com/emad__assem?", handle: "@emad__assem", isMega: false, tag: null },
+    { name: "Aliaa Abdelhamid", followers: "918K", url: "https://www.instagram.com/aliaabdelhamid_?", handle: "@aliaabdelhamid_", isMega: false, tag: null },
+    { name: "Yara Abdelhamid", followers: "1M", url: "https://www.instagram.com/yaraabdelhamid?", handle: "@yaraabdelhamid", isMega: true, tag: "MEGA" },
+    { name: "Ahled Ibrahim", followers: "1M", url: "https://www.instagram.com/ahmeedibrahimm?", handle: "@ahmeedibrahimm", isMega: false, tag: null },
+    { name: "Zeina Ashraf", followers: "1M", url: "https://www.instagram.com/zena.ashraf_?", handle: "@zena.ashraf_", isMega: false, tag: null }
+  ],
+
+  // Campaign Planning Packages
+  campaignPackages: [
+    {
+      id: "pkg-1",
+      optionNum: "01",
+      titleAr: "الخيار 01: مؤثر ميجا + 2 مؤثرين ميني + 20 مشارك GC",
+      titleEn: "Option 01: 1 Mega + 2 Mini + 20 GC Participants",
+      badgeAr: "انتشار وزخم سياحي واسع",
+      badgeEn: "Maximum Viral Buzz",
+      compositionAr: [
+        "1 مؤثر رئيسي (Mega Influencer) لقيادة الحملة وتوليد وعي فوري وجماهيرية واسعة.",
+        "2 مؤثرين مصغرين (Mini Influencers) للتعميق المجتمعي وتقديم توصيات شخصية موثوقة.",
+        "20 مشارك GC (GC Participants) لصناعة تغطية يومية واقعية عفوية من الشواطئ والمخيمات."
+      ],
+      compositionEn: [
+        "1 Mega Influencer to anchor the campaign with sweeping category awareness.",
+        "2 Mini Influencers driving focused community engagement and lifestyle credibility.",
+        "20 GC participants generating high-volume, spontaneous on-ground visual moments."
+      ],
+      fitAr: "مثالية للمواسم والافتتاحات الكبرى، حيث تدمج بين قوة الحضور الجماهيري وكثافة القصص الواقعية على منصات الفيديوهات القصيرة.",
+      fitEn: "Engineered for peak seasonal campaigns, blending premier creator presence with dense, relatable user momentum across TikTok and Reels."
+    },
+    {
+      id: "pkg-2",
+      optionNum: "02",
+      titleAr: "الخيار 02: مؤثر ميجا + 2 مؤثرين ميني + 1 مشارك GC",
+      titleEn: "Option 02: 1 Mega + 2 Mini + 1 GC Participant",
+      badgeAr: "سرد نوعي مركز وتكاليف محكمة",
+      badgeEn: "Focused Editorial Synergy",
+      compositionAr: [
+        "1 مؤثر رئيسي (Mega Influencer) لصناعة الرغبة والظهور المتميز.",
+        "2 مؤثرين مصغرين (Mini Influencers) لمخاطبة شرائح محددة (السفر، الاسترخاء، المغامرة).",
+        "1 مشارك GC (GC Participant) لتقديم يوميات سفر متصلة وتجربة إقامة تفصيلية."
+      ],
+      compositionEn: [
+        "1 Mega Influencer providing impactful top-of-funnel reach and brand prestige.",
+        "2 Mini Influencers targeting specific travel personas (workation, adventure, calm escapes).",
+        "1 GC participant documenting a dedicated, comprehensive end-to-end travel journey."
+      ],
+      fitAr: "خيار تخطيطي رشيق وعالي الكفاءة يركز على جودة السرد وتجربة الإقامة العميقة في مخيمات مختارة بنويبع.",
+      fitEn: "A high-efficiency, agile model highlighting thoughtful narrative depth and focused logistical execution across selected Nuweiba camps."
+    },
+    {
+      id: "pkg-3",
+      optionNum: "03",
+      titleAr: "الخيار 03: 2 مؤثرين ميجا + 20 مشارك GC",
+      titleEn: "Option 03: 2 Mega + 20 GC Participants",
+      badgeAr: "هيمنة تريند وتغطية كاسحة",
+      badgeEn: "Platform Dominance",
+      compositionAr: [
+        "2 مؤثرين رئيسيين (Mega Influencers) لإشعال تفاعل ثنائي متزامن ولفت أنظار الشباب في مصر.",
+        "20 مشارك GC (GC Participants) لمضاعفة ظهور علامة نويبع كامبس في كافة خوارزميات الاستكشاف."
+      ],
+      compositionEn: [
+        "2 Mega Influencers igniting simultaneous dual-creator buzz across major demographics.",
+        "20 GC participants amplifying social reach and saturating exploration feeds."
+      ],
+      fitAr: "مصممة للفعاليات الصيفية الكبرى والعطلات الرسمية لإحداث تحول سريع في الوعي الجمعي وإشغال غرف المخيمات.",
+      fitEn: "Designed for high-impact holiday pushes and major summer activations, driving rapid awareness and reservation velocity."
+    }
+  ],
+
   camps: [
     {
       id: "safari-beach",
