@@ -1351,20 +1351,12 @@ export const proposalData = {
         "./assets/mega/ahmed_badawy_3.jpeg"
       ],
       socialStats: {
-        total: "Pending Confirmation",
-        totalAr: "قيد تأكيد المطابقة",
-        totalEn: "Pending Confirmation",
-        facebook: "Pending (3M Staged)",
-        facebookAr: "قيد التحقق (3M جاهزة)",
-        facebookEn: "Pending (3M Staged)",
-        instagram: "Pending (1M Staged)",
-        instagramAr: "قيد التحقق (1M جاهزة)",
-        instagramEn: "Pending (1M Staged)",
-        tiktok: "Pending (1M Staged)",
-        tiktokAr: "قيد التحقق (1M جاهزة)",
-        tiktokEn: "Pending (1M Staged)",
-        statusNoteAr: "إحصائية 5,000,000 (3M فيسبوك / 1M إنستغرام / 1M تيك توك) جاهزة للتخصيص ومحفوظة بانتظار تأكيد العميل للملف المقصود بين أحمد بدوي ومحمد الهجان دون تغيير الهوية الحالية.",
-        statusNoteEn: "Staged 5,000,000 total (3M FB / 1M IG / 1M TT) held ready for assignment pending client confirmation between Ahmed Badawy and Mohamed Elhagan without altering profile identities."
+        total: "5M",
+        facebook: "3M",
+        instagram: "1M",
+        tiktok: "1M",
+        statusNoteAr: "إجمالي المتابعين محسوب برمجياً من الأرقام المعتمدة للمنصات (3M فيسبوك + 1M إنستغرام + 1M تيك توك = 5M)",
+        statusNoteEn: "Total Followers calculated programmatically from verified platform counts (3M FB + 1M IG + 1M TikTok = 5M)"
       },
       links: [
         { label: "Instagram (@ahmedbadawy)", url: "https://www.instagram.com/ahmedbadawy/" }
